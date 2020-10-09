@@ -1,0 +1,35 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    height: 35px;
+    width: 100%;
+    background-color: rgba(100, 100, 100, 0.7);
+    font-size: 17px;
+}
+
+nav button {
+    margin-top: 7px;
+    height: 22px;
+    font-size: 15px;
+    background-color: rgb(90, 90, 90);
+}
+
+#main {
+    text-align: center;
+    background-color: salmon;
+}
+
+#words {
+    height: 400px;
+    background-color: rosybrown;
+}
+
+input {
+    margin-top: 20px;
+    width: 240px;
+    height: 30px;
+    text-align: center;
+}
