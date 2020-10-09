@@ -22,9 +22,20 @@ nav button {
     background-color: salmon;
 }
 
+#start {
+    height: 25px;
+    width: 100px;
+    margin-top: 25px;
+}
+
+
 #words {
     height: 400px;
     background-color: rosybrown;
+}
+
+h2 {
+    padding-top: 200px;
 }
 
 input {
