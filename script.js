@@ -1,31 +1,49 @@
-// Creation d'object puis stockage de ces objects dans un array
+//Place un kanji dans le h2 de la div #words
 
 function Carte(kanji, pronun) {
     this.kanji = kanji;
     this.pronun = pronun;
 }
 
-var kanji001 = new Carte('女','おんな');
-var kanji002 = new Carte('男','おとこ');
-var kanji003 = new Carte('桜','さくら');
-var kanji004 = new Carte('穏便','');
-var kanji005 = new Carte('誠','');
-var kanji006 = new Carte('推薦','');
-var kanji007 = new Carte('砂','');
-var kanji008 = new Carte('色素','');
-var kanji009 = new Carte('組織','');
-var kanji010 = new Carte('抜釘','');
-
-kanjiDeck = [kanji001, kanji002, kanji003, kanji004, kanji005, kanji006, kanji007, kanji008, kanji009, kanji010];
-
-//Place un kanji dans le h2 de la div #words
-
 const cardPlace = document.getElementsByTagName('h2')[0];
+var actualDeck = [];
+var question = new Carte();
+var result = document.getElementsByTagName('p')[0];
+var cardNumber = 0;
 
-function start() {
-    var x = parseInt(Math.random()*10);             //On place un kanji dans h2
-    cardPlace.innerHTML = kanjiDeck[x].kanji;
+function pullCard() {
+    actualDeck = kanjiDeck;
+    cardNumber = parseInt(Math.random()*(actualDeck.length));             //On place un kanji dans h2
+    question = actualDeck[cardNumber];
+    cardPlace.innerHTML = question.kanji;
 
     const y = document.getElementById('start');     //Puis on retire le bouton "start"
     y.style = "display: none;";
+
+    result.innerHTML = "";                          //Puis on retire le message du résultat
+    document.getElementById('answer').value = "";
 }
+
+//On regarde si la réponse est bonne 
+
+function userAnswer(event) {
+    var key = event.keyCode;
+    if (key == 13) {
+        const x = document.getElementById('answer').value;
+        if (x == question.pronun) {
+            result.innerHTML = "Bonne réponse!";
+            actualDeck.splice(cardNumber,1);
+            if (actualDeck.length == 0) {
+                result.innerHTML = "Bonne réponse. C'était la dernière carte.";
+                return;
+            }
+        }
+        else {
+            result.innerHTML = "Mauvaise réponse!";
+        }
+
+        setTimeout(pullCard, 1000);
+    }
+}
+
+

@@ -12,14 +12,16 @@
                 <button>Kanji Lists</button>
                 <a>Infos</a>
                 <a>Profile</a>
+                <a>Option</a>
             </nav>
 
             <div id="main">
                 <div id="words">
                     <h2></h2>
+                    <p></p>
                 </div>
-                <input type="text"><br>
-                <button id="start" onclick="start()">Start</button>
+                <input type="text" id="answer" onkeydown="userAnswer(event)"><br>
+                <button id="start" onclick="pullCard()">Start</button>
             </div>
 
             <div id="results">
@@ -29,5 +31,6 @@
             </div>
         </section>
         <script src="script.js"></script>
+        <script src="decks.js"></script>
     </body>
 </html>
