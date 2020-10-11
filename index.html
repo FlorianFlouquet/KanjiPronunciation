@@ -3,13 +3,17 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <script src="https://kit.fontawesome.com/b5a7595eae.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
         <title></title>
     </head>
     <body>
         <section id="hero">
             <nav>
-                <button>Kanji Lists</button>
+                <div class="dropdown">
+                    <button id="kanjiLists">Kanji Lists</button>
+                    <div class="dropdown-Items"></div>
+                </div>
                 <a>Infos</a>
                 <a>Profile</a>
                 <a>Option</a>
@@ -25,9 +29,16 @@
             </div>
 
             <div id="results">
-                <div id="right"></div>
-                <div id="wrong"></div>
-                <canvas></canvas>
+                <div id="right">
+                    <i class="fas fa-check fa-3x"></i>
+                </div>
+                <div id="wrong">
+                    <i class="fas fa-times fa-3x"></i>
+                </div>    
+            </div>
+            <div id="contour">
+                <canvas id="canvas1"></canvas>
+                <canvas id="canvas2"></canvas>
             </div>
         </section>
         <script src="script.js"></script>

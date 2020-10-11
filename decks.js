@@ -16,4 +16,17 @@ var kanji008 = new Carte('色素','しきそ');
 var kanji009 = new Carte('組織','そしき');
 var kanji010 = new Carte('抜釘','ばってい');
 
-kanjiDeck = [kanji001, kanji002, kanji003, kanji004, kanji005, kanji006, kanji007, kanji008, kanji009, kanji010];
+kanjiDeck1 = [kanji001, kanji002, kanji003, kanji004, kanji005, kanji006, kanji007, kanji008, kanji009, kanji010];
+
+var kanji011 = new Carte('蠢く','うごめく');
+var kanji012 = new Carte('斑','ぶち');
+var kanji013 = new Carte('規模','きぼ');
+var kanji014 = new Carte('哀れ','あわれ');
+var kanji015 = new Carte('嘆く','なげく');
+var kanji016 = new Carte('儲かる','もうかる');
+var kanji017 = new Carte('鎮静剤','ちんせいざい');
+var kanji018 = new Carte('枯れる','かれる');
+var kanji019 = new Carte('凝縮','ぎょうしゅく');
+var kanji020 = new Carte('埃','ほこり');
+
+kanjiDeck2 = [kanji011, kanji012, kanji013, kanji014, kanji015, kanji016, kanji017, kanji018, kanji019, kanji020];

@@ -11,8 +11,16 @@ var question = new Carte();
 var result = document.getElementsByTagName('p')[0];
 var cardNumber = 0;
 
+var correctIcon = document.getElementById('right');
+var wrongIcon = document.getElementById('wrong');
+
+const successBar = document.getElementById('canvas1');
+const mistakeBar = document.getElementById('canvas2');
+var timesAnswered = 0;
+var success = 0;
+var mistake = 0;
+
 function pullCard() {
-    actualDeck = kanjiDeck;
     cardNumber = parseInt(Math.random()*(actualDeck.length));             //On place un kanji dans h2
     question = actualDeck[cardNumber];
     cardPlace.innerHTML = question.kanji;
@@ -22,6 +30,11 @@ function pullCard() {
 
     result.innerHTML = "";                          //Puis on retire le message du résultat
     document.getElementById('answer').value = "";
+
+    correctIcon.style.color = "black";
+    correctIcon.style.backgroundColor = "white";
+    wrongIcon.style.color = "black";
+    wrongIcon.style.backgroundColor = "white";
 }
 
 //On regarde si la réponse est bonne 
@@ -31,19 +44,55 @@ function userAnswer(event) {
     if (key == 13) {
         const x = document.getElementById('answer').value;
         if (x == question.pronun) {
-            result.innerHTML = "Bonne réponse!";
+            correctIcon.style.color = "white";
+            correctIcon.style.backgroundColor = "green";
             actualDeck.splice(cardNumber,1);
+            successRate();
             if (actualDeck.length == 0) {
-                result.innerHTML = "Bonne réponse. C'était la dernière carte.";
+                result.innerHTML = "C'était la dernière carte.";
                 return;
             }
         }
         else {
-            result.innerHTML = "Mauvaise réponse!";
+            mistakeRate();
+            wrongIcon.style.color = "white";
+            wrongIcon.style.backgroundColor = "red";
         }
 
         setTimeout(pullCard, 1000);
     }
 }
 
+//Script pour la barre de réussite        
+function successRate() {
+    success ++;
+    timesAnswered ++;
+    successBar.style.width = (success/timesAnswered)*100 + "%";
+    mistakeBar.style.width = (mistake/timesAnswered)*100 + "%";
+}
 
+function mistakeRate() {
+    mistake ++;
+    timesAnswered ++;
+    successBar.style.width = (success/timesAnswered)*100 + "%";
+    mistakeBar.style.width = (mistake/timesAnswered)*100 + "%";
+}
+
+//Choix du deck
+for (let i=1; i<3; i++) {
+    const x = document.getElementsByClassName("dropdown-Items")[0];
+    var div = document.createElement("a");
+    div.innerText = "List " + i;
+    x.appendChild(div);
+
+    div.onclick = function() {
+        console.log(i);
+        if (i == 1) {
+            actualDeck = kanjiDeck1;
+        }
+        else {
+            actualDeck = kanjiDeck2;
+        }
+    }
+
+}
