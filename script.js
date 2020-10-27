@@ -5,6 +5,18 @@ function Carte(kanji, pronun) {
     this.pronun = pronun;
 }
 
+//On download les decks venant du localstorage
+
+function downloadDecks() {
+    var getDeck = localStorage.getItem('Deck1');
+    kanjiDeck1 = JSON.parse(getDeck);
+    getDeck = localStorage.getItem('Deck2');
+    kanjiDeck2 = JSON.parse(getDeck);
+}
+downloadDecks();
+
+//Liste des variables
+
 const cardPlace = document.getElementsByTagName('h2')[0];
 var actualDeck = [];
 var question = new Carte();
@@ -37,27 +49,30 @@ function pullCard() {
     wrongIcon.style.backgroundColor = "white";
 }
 
-//On regarde si la réponse est bonne 
+//On regarde si la réponse de l'utilisateur est bonne 
 
 function userAnswer(event) {
     var key = event.keyCode;
     if (key == 13) {
         const x = document.getElementById('answer').value;
         if (x == question.pronun) {
+            result.innerHTML = question.pronun;
             correctIcon.style.color = "white";
             correctIcon.style.backgroundColor = "green";
             actualDeck.splice(cardNumber,1);
             successRate();
             if (actualDeck.length == 0) {
-                result.innerHTML = "C'était la dernière carte.";
+                result.innerHTML += "<br>C'était la dernière carte.";
                 return;
             }
         }
         else {
+            result.innerHTML = question.pronun;
             mistakeRate();
             wrongIcon.style.color = "white";
             wrongIcon.style.backgroundColor = "red";
         }
+
 
         setTimeout(pullCard, 1000);
     }
@@ -94,5 +109,4 @@ for (let i=1; i<3; i++) {
             actualDeck = kanjiDeck2;
         }
     }
-
 }

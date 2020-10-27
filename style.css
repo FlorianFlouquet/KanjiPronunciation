@@ -105,25 +105,24 @@ i {
 }
 
 #contour {
-    display: flex;
+    display: flex;    
     border: solid 3px black;
     width: 400px;
-    height: 30px;
+    height: 25px;
     text-align: center;
-    margin-left: 200px;
     margin-top: 20px;
 }
 
 #canvas1 {
     width: 0%;
-    height: 26px;
+    height: 21px;
     background-color: green;
     margin-top: 2px;
 }
 
 #canvas2 {
     width: 0%;
-    height: 26px;
+    height: 21px;
     background-color: red;
     margin-top: 2px;
 }
