@@ -4,18 +4,28 @@
 }
 
 nav {
-    height: 40px;
+    height: 70px;
     width: 100%;
     text-align: center;
-    background-color: rgba(100, 100, 100, 0.7);
-    font-size: 17px;
+    background-color:rgb(88, 14, 128, 0.85);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a {
+    text-decoration: none;
+    font-family: Arial;
+    color: white;
+    padding-left: 45px;
 }
 
 #kanjiLists {
-    height: 40px;
-    width: 90px;
-    font-size: 15px;
-    background-color: rgb(90, 90, 90);
+    height: 70px;
+    width: 160px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color:  rgba(145, 7 , 217);
+    color: white;
     border: none;
     cursor: pointer;
 }
@@ -29,7 +39,7 @@ nav {
     display: none;
     position: absolute;
     min-width: 160px;
-    background-color: slategray;
+    background-color: rgb(145, 7, 217);
     z-index: 1;
 }
 
@@ -51,7 +61,8 @@ nav {
 
 #main {
     text-align: center;
-    background-color: salmon;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 #start {
@@ -60,19 +71,65 @@ nav {
     margin-top: 25px;
 }
 
+#cardContainer {
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    text-align: center;  
+}
+
 
 #words {
     height: 400px;
-    background-color: rosybrown;
+    width: 450px;
+    margin-top: 100px;
+    border: solid 3px rgb(145, 7, 217);
+    border-radius: 3%;
+    background-color: white;
 }
 
 h2 {
-    padding-top: 200px;
+    padding-top: 80px;
+    font-size: 50px;
+}
+
+#words p {
+    padding-top: 50px;
+    font-size: 30px;
+}
+
+#words canvas {
+    display: none;
+    margin-top: 60px;
+    background-color: grey;
+    width: 400px;
+    height: 1px;
+}
+
+#sessionEnding {
+    position: relative;
+    display: initial;
+    padding-top: 180px;
+}
+
+#inputContainer {
+    height: 400px;
+    width: 600px;
+    margin-top: 100px;
+    background-color: rgb(145, 7, 217) ;
+}
+
+h3 {
+    color: white;
+    font-size: 24px;
+    padding-top: 40px;
+    padding-left: 127px;
+    text-align: left;
 }
 
 input {
-    margin-top: 20px;
-    width: 240px;
+    margin-top: 70px;
+    width: 350px;
     height: 30px;
     text-align: center;
 }
@@ -100,29 +157,5 @@ input {
     height: 70px;
 }
 
-i {
-    padding-top: 11px;
-}
 
-#contour {
-    display: flex;    
-    border: solid 3px black;
-    width: 400px;
-    height: 25px;
-    text-align: center;
-    margin-top: 20px;
-}
 
-#canvas1 {
-    width: 0%;
-    height: 21px;
-    background-color: green;
-    margin-top: 2px;
-}
-
-#canvas2 {
-    width: 0%;
-    height: 21px;
-    background-color: red;
-    margin-top: 2px;
-}

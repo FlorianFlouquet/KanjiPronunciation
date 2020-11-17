@@ -3,7 +3,6 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <script src="https://kit.fontawesome.com/b5a7595eae.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
         <title></title>
     </head>
@@ -17,29 +16,31 @@
                 <a>Infos</a>
                 <a>Profile</a>
                 <a>Option</a>
+                <a href="deckmaker.html">Edit Decks</a>
             </nav>
 
             <div id="main">
-                <div id="words">
-                    <h2></h2>
-                    <p></p>
+                <div id="cardContainer">
+                    <div id="words">
+                        <div id="sessionOngoing">
+                            <h2>Choisissez un deck dans "Kanji Lists" puis appuyez sur le bouton "Start"</h2>
+                            <canvas></canvas>
+                            <p></p>
+                        </div>
+                        <div id="sessionEnding">
+                            <h2></h2>
+                        </div>
+                    </div>
                 </div>
-                <input type="text" id="answer" onkeydown="userAnswer(event)"><br>
-                <button id="start" onclick="pullCard()">Start</button>
+                <div id="inputContainer">
+                    <h3>Restants: 0</h3>
+                    <h3>Correctes: 0</h3>
+                    <h3>Incorrectes: 0</h3>
+                    <input type="text" id="answer" onkeydown="userAnswer(event)"><br>
+                    <button id="start" onclick="start()">Start</button>
+                </div>
             </div>
 
-            <div id="results">
-                <div id="right">
-                    <i class="fas fa-check fa-3x"></i>
-                </div>
-                <div id="contour">
-                    <canvas id="canvas1"></canvas>
-                    <canvas id="canvas2"></canvas>
-                </div>
-                <div id="wrong">
-                    <i class="fas fa-times fa-3x"></i>
-                </div>    
-            </div>
         </section>
         <script src="script.js"></script>
     </body>

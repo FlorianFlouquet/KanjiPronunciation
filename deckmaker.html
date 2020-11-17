@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <style></style>
+</head>
+<body>
+    <nav>
+        <a>Infos</a>
+        <a>Profile</a>
+        <a>Option</a>
+        <a href="index.html">Back to main page</a>
+    </nav>
+    <div id="dropdown">
+        <button id="deckSelection" onclick="showMenu()">Deck 1</button>
+        <div id="deckMenu" style="display: none;">
+            <a>Deck 1</a>
+            <a>Deck 2</a>
+            <a>Deck 3</a>
+            <a>Deck 4</a>
+            <a>Deck 5</a>
+        </div>
+    </div>
+    <div onkeydown="collectData(event)" id="inputHolder">
+        <h3>Kanji</h3>
+        <input type="text" id="premier">
+        <h3>Prononciation</h3>
+        <input type="text" id="deuxieme">
+        <h3>Traduction</h3>
+        <input type="text" id="troisieme"><br>        
+    </div>
+    <button onclick="uploadDeck()">Confirm</button>
+
+    <script src="script.js"></script>
+</body>
